@@ -1,0 +1,343 @@
+/* ===== COMPONENTS STYLES =====
+   권나현 포트폴리오 - 컴포넌트 스타일
+   헤더, 버튼, 카드, 모달 등 재사용 가능한 컴포넌트들
+*/
+
+/* ===== HEADER & NAVIGATION ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: var(--border-light);
+  z-index: var(--z-fixed);
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  background: rgba(26, 26, 26, 0.98);
+  backdrop-filter: blur(30px);
+  box-shadow: var(--shadow-medium);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+  min-height: 70px;
+}
+
+.logo {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-black);
+  background: linear-gradient(
+    135deg,
+    var(--silver-light) 0%,
+    var(--text-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo a {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav-link {
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  transition: var(--transition-normal);
+  position: relative;
+  padding: var(--space-sm) 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-gradient);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* 모바일 네비게이션 토글 */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-primary);
+  margin: 3px 0;
+  transition: var(--transition-normal);
+  border-radius: 2px;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 모바일 네비게이션 메뉴 */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-4xl) var(--space-lg);
+    transition: left var(--transition-normal);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: var(--font-lg);
+    padding: var(--space-md) 0;
+  }
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-base);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--secondary-gradient);
+  color: var(--text-primary);
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  background: var(--accent-gradient);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+  color: var(--text-primary);
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--silver-medium);
+}
+
+.btn-outline:hover {
+  background: var(--silver-medium);
+  color: var(--text-dark);
+  border-color: var(--silver-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Small Button */
+.btn-sm {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-sm);
+}
+
+/* Large Button */
+.btn-lg {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--font-lg);
+}
+
+/* Button with icon only */
+.btn-icon {
+  padding: var(--space-md);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+/* Button Loading State */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-medium);
+  transition: all var(--transition-normal);
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-large);
+}
+
+.card-header {
+  margin-bottom: var(--space-lg);
+}
+
+.card-title {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+}
+
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: 2rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+  color: #333;
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem 0;
+  color: #333;
+}
+
+.modal-body p,
+.modal-body li {
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.modal-body ul {
+  padding-left: 1.5rem;
+}

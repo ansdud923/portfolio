@@ -1,0 +1,823 @@
+/* ===== COMMON STYLES =====
+   권나현 포트폴리오 - 공통 스타일
+   색상: 블랙/실버 그라데이션 테마
+*/
+
+/* ===== CSS 변수 (색상 팔레트) ===== */
+:root {
+  /* 메인 색상 - 블랙/실버 그라데이션 */
+  --primary-gradient: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #2d2d2d 50%,
+    #404040 100%
+  );
+  --secondary-gradient: linear-gradient(
+    135deg,
+    #2d2d2d 0%,
+    #404040 50%,
+    #565656 100%
+  );
+  --accent-gradient: linear-gradient(
+    135deg,
+    #404040 0%,
+    #565656 50%,
+    #707070 100%
+  );
+
+  /* 단색 */
+  --primary-dark: #1a1a1a;
+  --primary-medium: #2d2d2d;
+  --primary-light: #404040;
+  --secondary-dark: #565656;
+  --secondary-medium: #707070;
+  --secondary-light: #8a8a8a;
+
+  /* 실버 톤 */
+  --silver-dark: #9a9a9a;
+  --silver-medium: #b5b5b5;
+  --silver-light: #d0d0d0;
+  --silver-extra-light: #e5e5e5;
+
+  /* 텍스트 색상 */
+  --text-primary: #ffffff;
+  --text-secondary: #d0d0d0;
+  --text-muted: #b5b5b5;
+  --text-dark: #4b4949;
+  --text-dark-secondary: #666666;
+  --text-dark-muted: #999999;
+
+  /* 배경 색상 */
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2d2d2d;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+
+  /* 액센트 색상 */
+  --accent-blue: #4a90e2;
+  --accent-green: #7ed321;
+  --accent-orange: #f5a623;
+  --accent-red: #d0021b;
+
+  /* 그림자 */
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-large: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --shadow-extra-large: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  /* 보더 */
+  --border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --border-medium: 1px solid rgba(255, 255, 255, 0.2);
+  --border-dark: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* 폰트 크기 */
+  --font-xs: 0.75rem; /* 12px */
+  --font-sm: 0.875rem; /* 14px */
+  --font-base: 1rem; /* 16px */
+  --font-lg: 1.125rem; /* 18px */
+  --font-xl: 1.25rem; /* 20px */
+  --font-2xl: 1.5rem; /* 24px */
+  --font-3xl: 1.875rem; /* 30px */
+  --font-4xl: 2.25rem; /* 36px */
+  --font-5xl: 3rem; /* 48px */
+  --font-6xl: 3.75rem; /* 60px */
+
+  /* 폰트 두께 */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-black: 900;
+
+  /* 간격 */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  --space-4xl: 5rem; /* 80px */
+  --space-5xl: 6rem; /* 96px */
+
+  /* 브레이크포인트 (참조용) */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  /* 애니메이션 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Z-인덱스 */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* ===== RESET & NORMALIZE ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 모바일 메뉴 열릴 때 스크롤 방지 */
+body.menu-open {
+  overflow: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ===== 기본 요소 스타일링 ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--font-5xl);
+}
+h2 {
+  font-size: var(--font-4xl);
+}
+h3 {
+  font-size: var(--font-3xl);
+}
+h4 {
+  font-size: var(--font-2xl);
+}
+h5 {
+  font-size: var(--font-xl);
+}
+h6 {
+  font-size: var(--font-lg);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+a:hover {
+  color: var(--silver-light);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ===== 컨테이너 ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* ===== 섹션 공통 ===== */
+.section {
+  padding: var(--space-5xl) 0;
+  position: relative;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+}
+
+.section:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.section:nth-child(odd) {
+  background: var(--bg-primary);
+}
+
+/* 특별한 배경이 필요한 섹션들 */
+.section.hero {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section.aws-expertise {
+  background: var(--secondary-gradient);
+}
+
+.section.about {
+  background: linear-gradient(135deg, #fcfbf8 0%, #e2e8f0 100%);
+  color: #333;
+}
+
+.section.skills {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  color: #333;
+}
+
+.section.education {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #333;
+}
+
+.section.certifications {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  color: #333;
+}
+
+/* 밝은 섹션의 제목과 텍스트 색상 추가 */
+/* 기존 섹션 배경 설정 뒤에 추가 */
+
+.section.skills,
+.section.education,
+.section.certifications {
+  color: var(--text-dark);
+}
+
+.section.about h1,
+.section.about h2,
+.section.about h3,
+.section.skills h1,
+.section.skills h2,
+.section.skills h3,
+.section.education h1,
+.section.education h2,
+.section.education h3,
+.section.certifications h1,
+.section.certifications h2,
+.section.certifications h3 {
+  color: var(--text-dark);
+}
+
+.section.about {
+  color: var(--silver-extra-light);
+}
+
+.section.about p,
+.section.skills p,
+.section.education p,
+.section.certifications p {
+  color: var(--text-dark-secondary);
+}
+
+/* .section.about {
+  background: var(--bg-secondary);
+}
+
+.section.skills {
+  background: var(--bg-secondary);
+} */
+
+.section.growth-story {
+  background: var(--bg-primary);
+}
+
+.section.personality {
+  background: var(--bg-secondary);
+}
+
+.section.core-values {
+  background: var(--bg-primary);
+}
+
+.section.projects {
+  background: var(--bg-primary);
+}
+
+.section.experience {
+  background: var(--bg-secondary);
+}
+
+/* .section.education {
+  background: var(--bg-primary);
+} */
+
+/* .section.certifications {
+  background: var(--bg-secondary);
+} */
+
+.section.motivation {
+  background: var(--bg-primary);
+}
+
+.section.goals {
+  background: var(--bg-secondary);
+}
+
+.section.collaboration {
+  background: var(--bg-primary);
+}
+
+.section.interests {
+  background: var(--bg-secondary);
+}
+
+.section.contact {
+  background: var(--accent-gradient);
+}
+
+/* ===== 섹션 타이틀 ===== */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.section-title h2 {
+  font-size: var(--font-4xl);
+  font-weight: var(--font-black);
+  margin-bottom: var(--space-md);
+  background: linear-gradient(
+    135deg,
+    var(--silver-light) 0%,
+    var(--text-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-gradient);
+  border-radius: 2px;
+}
+
+.section-title p {
+  font-size: var(--font-lg);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== 커스텀 스크롤바 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gradient);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-medium) var(--bg-secondary);
+}
+
+/* ===== 선택 영역 스타일 ===== */
+::selection {
+  background: var(--primary-light);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: var(--primary-light);
+  color: var(--text-primary);
+}
+
+/* ===== 포커스 스타일 ===== */
+*:focus {
+  outline: 2px solid var(--silver-medium);
+  outline-offset: 2px;
+}
+
+/* ===== 로딩 스크린 ===== */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+}
+
+.loading-content {
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--primary-light);
+  border-top: 3px solid var(--text-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-md);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== 스크롤 진행률 표시 ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--secondary-gradient);
+  z-index: var(--z-fixed);
+  transition: width 0.1s ease;
+}
+
+/* ===== 유틸리티 클래스 ===== */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.font-light {
+  font-weight: var(--font-light);
+}
+.font-normal {
+  font-weight: var(--font-normal);
+}
+.font-medium {
+  font-weight: var(--font-medium);
+}
+.font-semibold {
+  font-weight: var(--font-semibold);
+}
+.font-bold {
+  font-weight: var(--font-bold);
+}
+.font-black {
+  font-weight: var(--font-black);
+}
+
+.text-xs {
+  font-size: var(--font-xs);
+}
+.text-sm {
+  font-size: var(--font-sm);
+}
+.text-base {
+  font-size: var(--font-base);
+}
+.text-lg {
+  font-size: var(--font-lg);
+}
+.text-xl {
+  font-size: var(--font-xl);
+}
+.text-2xl {
+  font-size: var(--font-2xl);
+}
+.text-3xl {
+  font-size: var(--font-3xl);
+}
+.text-4xl {
+  font-size: var(--font-4xl);
+}
+
+.highlight {
+  background: linear-gradient(
+    135deg,
+    var(--silver-medium) 0%,
+    var(--text-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-semibold);
+}
+
+.lead {
+  font-size: var(--font-lg);
+  font-weight: var(--font-medium);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* 숨기기 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* ===== 그리드 시스템 ===== */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-4,
+  .grid-cols-3,
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* ===== 플렉스 유틸리티 ===== */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+/* ===== 간격 유틸리티 ===== */
+.mt-xs {
+  margin-top: var(--space-xs);
+}
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+.mt-md {
+  margin-top: var(--space-md);
+}
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+.mb-xs {
+  margin-bottom: var(--space-xs);
+}
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
+
+.pt-xs {
+  padding-top: var(--space-xs);
+}
+.pt-sm {
+  padding-top: var(--space-sm);
+}
+.pt-md {
+  padding-top: var(--space-md);
+}
+.pt-lg {
+  padding-top: var(--space-lg);
+}
+.pt-xl {
+  padding-top: var(--space-xl);
+}
+
+.pb-xs {
+  padding-bottom: var(--space-xs);
+}
+.pb-sm {
+  padding-bottom: var(--space-sm);
+}
+.pb-md {
+  padding-bottom: var(--space-md);
+}
+.pb-lg {
+  padding-bottom: var(--space-lg);
+}
+.pb-xl {
+  padding-bottom: var(--space-xl);
+}
+
+/* ===== 반응형 헬퍼 ===== */
+@media (max-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+  .sm\:block {
+    display: block;
+  }
+  .sm\:text-center {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+  .md\:block {
+    display: block;
+  }
+  .md\:text-center {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lg\:hidden {
+    display: none;
+  }
+  .lg\:block {
+    display: block;
+  }
+}
+
+/* ===== 애니메이션 유틸리티 ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.6s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== 프린트 스타일 ===== */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
