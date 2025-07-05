@@ -215,6 +215,8 @@
 .subtitle {
   font-size: var(--font-2xl);
   color: white !important;
+    font-weight: var(--font-bold) !important; /* 또는 700, 800, 900 */
+
 }
 
 .profile-card {
@@ -531,7 +533,7 @@
 .about-text h3 {
   font-size: var(--font-xl);
   margin-bottom: var(--space-lg);
-  color: var(--text-primary);
+  color: white !important;
 }
 
 .about-text p {
@@ -655,7 +657,7 @@
 
 .skill-item-larger:hover {
   background: #979797;
-  transform: translateX(5px);
+  /* transform: translateX(3px); */
 }
 
 .skill-name {
