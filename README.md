@@ -7,23 +7,18 @@
 
 ## 👋 About Me
 #### :raising_hand: AWS 클라우드 운영 엔지니어 지망생 "권나현"<br/>
-#### :fire: 5년간의 IT 기반 업무 경험을 바탕으로 한 신뢰할 수 있는 서버 관리자<br/>
 #### :mortar_board: AWS SAA 자격증 보유 - 클라우드 아키텍처 설계 및 운영 전문가
 
 ---
 
 ## 🚀 포트폴리오 사이트 및 주요 결과
 
-### 🎬 [포트폴리오 웹사이트 바로가기](https://your-portfolio-domain.com) 
+### 🎬 [포트폴리오 웹사이트 바로가기](https://nahyun-portfolio.netlify.app/) 
 > 🌐 AWS Lambda + S3로 구축된 서버리스 포트폴리오를 확인해보세요!
-
-### 📊 [프로젝트 상세 문서 보러가기](https://github.com/ansdud923/portfolio-docs)
-> 📋 기술 문서 및 아키텍처 설계서를 확인해보세요!
-
 ---
 
 ## 🖥️ 포트폴리오 스크린샷
-<img src="./assets/images/portfolio-main.jpg" width="700" height="400" alt="포트폴리오 메인 화면">
+<img src="./images/portfolio-main.jpg" width="700" height="400" alt="포트폴리오 메인 화면">
 
 <details>
 <summary>
@@ -38,8 +33,8 @@
 > 메인 랜딩 페이지
   <br>
 <p align="center">
-  <img src="./assets/images/screenshots/hero-section.png" width="350" height="250" alt="히어로 섹션">
-  <img src="./assets/images/screenshots/about-section.png" width="350" height="250" alt="소개 섹션">
+  <img src="./images/hero-section.png" width="350" height="250" alt="히어로 섹션">
+  <img src="./images/about-section.png" width="350" height="250" alt="소개 섹션">
 </p>
 </details>
 
@@ -49,8 +44,8 @@
 > AWS 및 기술 역량 소개
   <br>
 <p align="center">
-  <img src="./assets/images/screenshots/skills-section.png" width="350" height="250" alt="기술 스택">
-  <img src="./assets/images/screenshots/aws-section.png" width="350" height="250" alt="AWS 전문 역량">
+  <img src="./images/skills-section.png" width="350" height="250" alt="기술 스택">
+  <img src="./images/aws-section.png" width="350" height="250" alt="AWS 전문 역량">
 </p>
 </details>
 
@@ -60,8 +55,7 @@
 > 주요 프로젝트 및 상세 모달
 <br>
 <p align="center">
-  <img src="./assets/images/screenshots/projects-grid.png" width="350" height="250" alt="프로젝트 그리드">
-  <img src="./assets/images/screenshots/project-modal.png" width="350" height="250" alt="프로젝트 상세">
+  <img src="./images/projects-grid.png" width="350" height="250" alt="프로젝트 그리드">
 </p>
 </details>
 
@@ -71,19 +65,8 @@
 > 타임라인 형태의 경력 소개
   <br>
 <p align="center">
-  <img src="./assets/images/screenshots/experience-timeline.png" width="350" height="250" alt="경력 타임라인">
-  <img src="./assets/images/screenshots/education-cards.png" width="350" height="250" alt="교육 이력">
-</p>
-</details>
-
-<details>
-<summary>📱 반응형 디자인</summary>
-<br>
-> 모바일 최적화 UI
-  <br>
-<p align="center">
-  <img src="./assets/images/screenshots/mobile-view.png" width="200" height="400" alt="모바일 화면">
-  <img src="./assets/images/screenshots/tablet-view.png" width="300" height="400" alt="태블릿 화면">
+  <img src="./images/experience-timeline.png" width="350" height="250" alt="경력 타임라인">
+  <img src="./images/education-cards.png" width="350" height="250" alt="교육 이력">
 </p>
 </details>
 </details>
@@ -419,7 +402,7 @@ aws acm request-certificate \
 📧 **Email**: ansdud923@icloud.com  
 📱 **Phone**: 010-8188-7132  
 🔗 **GitHub**: [github.com/ansdud923](https://github.com/ansdud923)  
-🌐 **Portfolio**: [your-portfolio-domain.com](https://your-portfolio-domain.com)  
+🌐 **Portfolio**: [your-portfolio-domain.com](https://nahyun-portfolio.netlify.app/)  
 📍 **Location**: 서울, 대한민국  
 
 ---
