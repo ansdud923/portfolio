@@ -341,3 +341,88 @@
 .modal-body ul {
   padding-left: 1.5rem;
 }
+
+/* components.css 파일 끝에 추가하세요 */
+
+/* 프로젝트 모달 갤러리 스타일 */
+.project-gallery {
+  margin-bottom: 2rem;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-modal-image:hover {
+  transform: scale(1.05);
+}
+
+/* 프로젝트 링크 버튼 */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-links .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-links .btn-outline {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.project-links .btn-outline:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.project-links .btn-primary {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border: 2px solid transparent;
+  color: white;
+}
+
+.project-links .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* 모달 반응형 */
+@media (max-width: 768px) {
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .project-links .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

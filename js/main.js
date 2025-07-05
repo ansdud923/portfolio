@@ -699,58 +699,158 @@ function openProjectModal(projectId) {
         'streamlit-dashboard': {
             title: 'STREAMLIT 마케팅데이터 대시보드',
             tech: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
+            images: [
+                'assets/images/projects/streamlit-1.png',
+                'assets/images/projects/streamlit-2.png'
+            ],
+            githubUrl: 'https://github.com/ansdud923/streamlit-dashboard',
+            demoUrl: 'https://your-demo-url.com',
             content: `
+                <div class="project-gallery">
+                    <div class="project-images">
+                        <img src="assets/images/projects/streamlit-1.png" alt="STREAMLIT 대시보드 메인" class="project-modal-image">
+                        <img src="assets/images/projects/streamlit-2.png" alt="STREAMLIT 대시보드 차트" class="project-modal-image">
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/ansdud923/Streamlit_project_data" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub 보기
+                    </a>
+                    <a href="https://nahyun.streamlit.app/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> 사이트 방문
+                    </a>
+                </div>
+                
                 <h3>프로젝트 개요</h3>
-                <p>마케팅 데이터를 효과적으로 시각화하고 분석하기 위한 대시보드 애플리케이션입니다.</p>
+                <p>Python과 Streamlit을 활용하여 실시간 마케팅 데이터를 시각화하는 대시보드를 개발했습니다. 사용자가 직관적으로 데이터를 분석할 수 있도록 인터랙티브한 차트와 필터링 기능을 제공합니다.</p>
                 
                 <h3>주요 기능</h3>
                 <ul>
-                    <li>실시간 데이터 시각화</li>
-                    <li>인터랙티브 차트 및 그래프</li>
-                    <li>고급 필터링 기능</li>
-                    <li>데이터 내보내기 기능</li>
+                    <li>실시간 데이터 업데이트 및 시각화</li>
+                    <li>다양한 필터 옵션 (날짜, 카테고리, 지역별)</li>
+                    <li>인터랙티브 차트 (Bar, Line, Pie 차트)</li>
+                    <li>데이터 내보내기 기능 (CSV, Excel)</li>
+                    <li>반응형 웹 디자인</li>
                 </ul>
                 
-                <h3>기술적 성과</h3>
-                <p>Python과 Streamlit을 활용하여 직관적인 UI/UX를 제공하며, 복잡한 데이터를 쉽게 이해할 수 있도록 구현했습니다.</p>
+                <h3>기술적 성취</h3>
+                <ul>
+                    <li>Pandas를 활용한 효율적인 데이터 처리</li>
+                    <li>Plotly를 통한 고품질 시각화 구현</li>
+                    <li>Streamlit의 캐싱 기능으로 성능 최적화</li>
+                    <li>사용자 친화적인 UI/UX 설계</li>
+                </ul>
             `
         },
         'ai-storybook-app': {
             title: 'AI 동화 제작 모바일 앱',
             tech: ['Flutter', 'Spring Boot', 'OpenAI API', 'AWS'],
+            images: [
+                'assets/images/projects/homepage.jpg',
+                'assets/images/projects/deviceframes.png'
+            ],
+            githubUrl: 'https://github.com/ansdud923/fairytale_app',
+            demoUrl: null,
             content: `
+                <div class="project-gallery">
+                    <div class="project-images">
+                        <img src="assets/images/projects/homepage.jpg" alt="AI 동화 앱 메인" class="project-modal-image">
+                        <img src="assets/images/projects/deviceframes.png" alt="AI 동화 앱 기능" class="project-modal-image">
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/ansdud923/fairytale_app" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub 보기
+                    </a>
+                    <a href="https://drive.google.com/file/d/1XXKdtG4rx2Q8TNCUGCAxraOUFC_E01TU/preview" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> 시연영상 보기
+                    </a>
+                </div>
+                
                 <h3>프로젝트 개요</h3>
-                <p>AI 기술을 활용하여 맞춤형 동화를 생성하고 삽화와 음성을 제공하는 모바일 애플리케이션입니다.</p>
+                <p>OpenAI API를 활용하여 맞춤형 동화를 생성하고, 삽화와 음성을 제공하는 모바일 애플리케이션입니다. AWS 인프라를 기반으로 안정적인 서비스를 구축했습니다.</p>
                 
                 <h3>주요 기능</h3>
                 <ul>
-                    <li>OpenAI API를 활용한 동화 생성</li>
-                    <li>AI 기반 삽화 생성</li>
-                    <li>텍스트-음성 변환 기능</li>
-                    <li>사용자 맞춤 설정</li>
+                    <li>AI 기반 맞춤형 동화 생성</li>
+                    <li>텍스트를 음성으로 변환 (TTS)</li>
+                    <li>AI 생성 삽화 제공</li>
+                    <li>사용자별 동화 저장 및 관리</li>
+                    <li>크로스 플랫폼 지원 (iOS/Android)</li>
                 </ul>
                 
-                <h3>AWS 인프라</h3>
-                <p>EC2, RDS, S3를 활용한 안정적인 백엔드 시스템을 구축했습니다.</p>
+                <h3>인프라 담당 업무</h3>
+                <ul>
+                    <li>AWS EC2에 Ubuntu 서버 환경 구축</li>
+                    <li>RDS postgreSQL 데이터베이스 설정</li>
+                    <li>S3 버킷으로 이미지 및 음성 파일 저장</li>
+                    <li>Spring Boot API 서버 배포 및 관리</li>
+                    <li>로드 밸런싱 및 모니터링 설정</li>
+                </ul>
+                
+                <h3>기술적 성취</h3>
+                <ul>
+                    <li>클라우드 기반 확장 가능한 아키텍처 구현</li>
+                    <li>실시간 AI API 연동 및 최적화</li>
+                    <li>효율적인 리소스 관리 및 비용 최적화</li>
+                </ul>
             `
         },
         'portfolio-website': {
             title: '개인 포트폴리오 웹사이트',
             tech: ['HTML5', 'CSS3', 'JavaScript', 'AWS Lambda', 'AWS S3'],
+            images: [
+                'assets/images/projects/portfolio-1.png',
+                'assets/images/projects/portfolio-2.png'
+            ],
+            githubUrl: 'https://github.com/ansdud923/portfolio',
+            demoUrl: 'https://nahyun-portfolio.netlify.app/',
             content: `
+                <div class="project-gallery">
+                    <div class="project-images">
+                        <img src="assets/images/projects/portfolio-1.png" alt="포트폴리오 메인" class="project-modal-image">
+                        <img src="assets/images/projects/portfolio-2.png" alt="포트폴리오 반응형" class="project-modal-image">
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/ansdud923/portfolio" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub 보기
+                    </a>
+                    <a href="https://nahyun-portfolio.netlify.app/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> 사이트 방문
+                    </a>
+                </div>
+                
                 <h3>프로젝트 개요</h3>
-                <p>서버리스 아키텍처를 활용한 개인 포트폴리오 웹사이트입니다.</p>
+                <p>서버리스 아키텍처를 활용한 개인 포트폴리오 웹사이트입니다. AWS Lambda와 S3를 활용하여 비용 효율적이고 확장 가능한 웹사이트를 구현했습니다.</p>
                 
                 <h3>주요 특징</h3>
                 <ul>
-                    <li>반응형 웹 디자인</li>
-                    <li>부드러운 애니메이션 효과</li>
-                    <li>모바일 최적화</li>
+                    <li>반응형 웹 디자인 (모바일 최적화)</li>
+                    <li>부드러운 스크롤 애니메이션</li>
+                    <li>인터랙티브 UI/UX</li>
                     <li>SEO 최적화</li>
+                    <li>빠른 로딩 속도</li>
                 </ul>
                 
                 <h3>AWS 서버리스 구조</h3>
-                <p>Lambda와 S3를 활용하여 비용 효율적이고 확장 가능한 웹사이트를 구현했습니다.</p>
+                <ul>
+                    <li>S3 정적 웹 호스팅</li>
+                    <li>CloudFront CDN 적용</li>
+                    <li>Route 53 도메인 관리</li>
+                    <li>Lambda 함수를 통한 동적 기능</li>
+                    <li>API Gateway를 통한 백엔드 연동</li>
+                </ul>
+                
+                <h3>기술적 성취</h3>
+                <ul>
+                    <li>99.9% 업타임과 빠른 응답 속도</li>
+                    <li>월 $5 이하의 저비용 운영</li>
+                    <li>자동 배포 파이프라인 구축</li>
+                </ul>
             `
         }
     };
