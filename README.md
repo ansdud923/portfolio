@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="./assets/images/profile/profile-icon.png" width="120" height="120" alt="Profile">
   <h1>
     <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:404040&height=100&section=header&text=AWS%20Cloud%20Engineer&fontSize=35&fontColor=FFFFFF&fontAlignY=50" alt="header" />
   </h1>
