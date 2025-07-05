@@ -23,129 +23,87 @@
 /* 섹션 타이틀 */
 .section-title {
   margin-bottom: var(--space-2xl);
-  text-align: center;
 }
 
 .section-title h2 {
   font-size: var(--font-3xl);
-  font-weight: var(--font-black);
   margin-bottom: var(--space-md);
-  position: relative;
-}
-
-/* 어두운 섹션(홀수)의 제목 - 밝은 그라데이션 */
-.section:nth-child(odd) .section-title h2 {
-  background: linear-gradient(135deg, var(--silver-light) 0%, var(--text-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* 밝은 섹션(짝수)의 제목 - 어두운 그라데이션 */
-.section:nth-child(even) .section-title h2 {
-  background: linear-gradient(135deg, #333 0%, #666 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* 제목 밑줄 */
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--secondary-gradient);
-  border-radius: 2px;
 }
 
 .section-title p {
   font-size: var(--font-base);
-  max-width: 600px;
-  margin: 0 auto;
 }
-/* ===== 섹션별 배경색상과 텍스트색상 적용 부분 ===== */
 
-/* === 어두운 배경 섹션들 (홀수) === */
+/* 어두운 배경 섹션들 */
 .section:nth-child(odd) {
-  background: var(--bg-primary);     /* 홀수 섹션 배경 */
-  color: var(--text-primary);        /* 홀수 섹션 텍스트 색상 */
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .section:nth-child(odd) h1,
 .section:nth-child(odd) h2,
 .section:nth-child(odd) h3 {
-  color: var(--text-primary);        /* 홀수 섹션 제목 색상 */
+  color: var(--text-primary);
 }
 
 .section:nth-child(odd) p {
-  color: var(--text-secondary);      /* 홀수 섹션 문단 색상 */
+  color: var(--text-secondary);
 }
 
-/* === 밝은 배경 섹션들 (짝수) === */
+/* 밝은 배경 섹션들 */
 .section:nth-child(even) {
-  background: linear-gradient(135deg, #fcfbf8 0%, #e2e8f0 100%); /* 짝수 섹션 배경 */
-  color: #333 ;                        /* 짝수 섹션 텍스트 색상 */
+  background: linear-gradient(135deg, #fcfbf8 0%, #e2e8f0 100%);
+  color: #333;
 }
 
 .section:nth-child(even) h1,
 .section:nth-child(even) h2,
 .section:nth-child(even) h3 {
-  color: #333;                        /* 짝수 섹션 제목 색상 */
+  color: #333;
 }
 
 .section:nth-child(even) p {
-  color: #8d8a8a;                        /* 짝수 섹션 문단 색상 */
+  color: #666;
 }
 
 .section:nth-child(even) .section-title h2::after {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* === 특별한 배경이 필요한 섹션들 === */
+/* 특별한 배경이 필요한 섹션들 */
 .section.hero {
-  background: var(--primary-gradient) !important; /* 히어로 섹션 배경 */
+  background: var(--primary-gradient) !important;
 }
 
-/* .section.aws-expertise {
-  background: var(--secondary-gradient) !important; 
-} */
+.section.aws-expertise {
+  background: var(--secondary-gradient) !important;
+}
 
 .section.contact {
-  background: var(--accent-gradient) !important; /* 연락처 섹션 배경 */
+  background: var(--accent-gradient) !important;
 }
 
-/* Contact 섹션 제목만 흰색으로 */
-.section.contact .section-title h2 {
-  color: white !important;
-  background: none !important;
-  -webkit-text-fill-color: white !important;
-}
-
-/* === 밝은 섹션의 카드 스타일 === */
+/* 밝은 섹션의 카드 스타일 */
 .section:nth-child(even) .card,
 .section:nth-child(even) .skill-card-compact,
 .section:nth-child(even) .project-card {
-  background: white;                 /* 밝은 섹션 카드 배경 */
-  color: #333;                       /* 밝은 섹션 카드 텍스트 색상 */
-  border: 1px solid #e2e8f0;        /* 밝은 섹션 카드 테두리 */
+  background: white;
+  color: #333;
+  border: 1px solid #e2e8f0;
 }
 
 .section:nth-child(even) .card h3,
 .section:nth-child(even) .card h4 {
-  color: #333;                       /* 밝은 섹션 카드 제목 색상 */
+  color: #333;
 }
 
-/* === 어두운 섹션의 카드 스타일 === */
+/* 어두운 섹션의 카드 스타일 */
 .section:nth-child(odd) .card,
 .section:nth-child(odd) .skill-card-compact,
 .section:nth-child(odd) .project-card {
-  background: var(--bg-tertiary);    /* 어두운 섹션 카드 배경 */
-  color: var(--text-primary);        /* 어두운 섹션 카드 텍스트 색상 */
-  border: var(--border-light);       /* 어두운 섹션 카드 테두리 */
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: var(--border-light);
 }
 
 /* ===== HERO SECTION ===== */
@@ -212,11 +170,6 @@
 }
 
 /* ===== HERO PROFILE CARD STYLES ===== */
-.subtitle {
-  font-size: var(--font-2xl);
-  color: white !important;
-}
-
 .profile-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -460,23 +413,21 @@
   line-height: 1.5;
 }
 
-/* === 개별 섹션별 색상 오버라이드 === */
-
-/* About Me 섹션 */
-/* .section.about {
-  background: var(--bg-secondary);      
-  color: var(--text-primary);            
+/* ===== About Me ===== */
+.section.about {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .section.about h1,
 .section.about h2,
 .section.about h3 {
-  color: var(--text-primary);            
+  color: var(--text-primary);
 }
 
 .section.about p {
-  color: var(--text-secondary);        
-} */
+  color: var(--text-secondary);
+}
 
 .about-content {
   display: grid;
@@ -632,7 +583,7 @@
 .skill-header-larger h3 {
   font-size: var(--font-xl);
   margin: 0;
-  color: #333 !important;
+  color: #333;
   font-weight: var(--font-bold);
   line-height: 1.2;
 }
@@ -654,7 +605,7 @@
 }
 
 .skill-item-larger:hover {
-  background: #979797;
+  background: #e9ecef;
   transform: translateX(5px);
 }
 
@@ -669,7 +620,7 @@
 
 .skill-item-larger p {
   font-size: var(--font-sm);
-  color: #3c3b3b !important;
+  color: #666;
   margin: 0;
   line-height: 1.4;
 }
@@ -787,7 +738,7 @@
 
 .aws-services-fixed h3 {
   font-size: var(--font-xl);
-  color: rgb(133, 129, 129);
+  color: white;
   margin-bottom: var(--space-lg);
 }
 
@@ -798,14 +749,13 @@
 }
 
 .service-item-fixed {
-  /* background: rgba(255, 255, 255, 0.1); */
-  background: rgba(0, 0, 0, 0.1);  /* 어두운 반투명 */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: var(--space-md);
   border-radius: 10px;
   border: var(--border-light);
   font-size: var(--font-sm);
-  color: rgba(31, 30, 30, 0.9);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.4;
   transition: var(--transition-normal);
 }
@@ -815,9 +765,9 @@
   transform: translateX(5px);
 }
 /* ===== Projects Section ===== */
-/* .section.projects {
-  background: var(--bg-primary);      
-} */
+.section.projects {
+  background: var(--bg-primary);
+}
 
 .projects-grid {
   display: grid;
@@ -978,9 +928,9 @@
 }
 
 /* ===== Experience Section ===== */
-/* .section.experience {
-  background: var(--bg-secondary);      
-} */
+.section.experience {
+  background: var(--bg-secondary);
+}
 
 .experience-timeline {
   position: relative;
@@ -1063,7 +1013,7 @@
   display: block;
   font-size: var(--font-base);
   font-weight: var(--font-semibold);
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -1141,7 +1091,7 @@
 .company-name {
   font-size: var(--font-lg);
   font-weight: var(--font-bold);
-  color: white !important;
+  color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -1172,7 +1122,7 @@
   font-size: var(--font-2xl);
   text-align: center;
   margin-bottom: var(--space-xl);
-  color: white !important;
+  color: var(--text-primary);
 }
 
 .summary-grid {
@@ -1215,9 +1165,9 @@
 }
 
 /* ===== Education Section ===== */
-/* .section.education {
-  background: var(--bg-primary);        
-  color: var(--text-primary);         
+.section.education {
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .section.education h1,
@@ -1229,7 +1179,7 @@
 
 .section.education p {
   color: var(--text-secondary);
-} */
+}
 
 .education-content {
   display: flex;
@@ -1567,7 +1517,7 @@
 
 /* ===== Contact Section ===== */
 .section.contact {
-  background: #0f0f0f; /* 연락처 섹션 배경 */
+  background: #0f0f0f;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -1660,7 +1610,7 @@
 .contact-title h3 {
   font-size: var(--font-xl);
   margin-bottom: var(--space-xs);
-  color: white;
+  color: var(--text-primary);
 }
 
 .contact-title p {

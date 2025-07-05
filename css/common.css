@@ -41,7 +41,7 @@
 
   /* 텍스트 색상 */
   --text-primary: #ffffff;
-  --text-secondary: #d0d0d0;
+  --text-secondary: #edebeb;
   --text-muted: #b5b5b5;
   --text-dark: #4b4949;
   --text-dark-secondary: #666666;
@@ -279,7 +279,7 @@ select {
 
 .section.about {
   background: linear-gradient(135deg, #fcfbf8 0%, #e2e8f0 100%);
-  color: #333;
+  color: #aa3939;
 }
 
 .section.skills {
