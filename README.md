@@ -18,7 +18,7 @@
 ---
 
 ## 🖥️ 포트폴리오 스크린샷
-<img src="./images/portfolio-main.jpg" width="700" height="400" alt="포트폴리오 메인 화면">
+<img src="./images/portfolio-main.png" width="700" height="400" alt="포트폴리오 메인 화면">
 
 <details>
 <summary>
@@ -402,7 +402,7 @@ aws acm request-certificate \
 📧 **Email**: ansdud923@icloud.com  
 📱 **Phone**: 010-8188-7132  
 🔗 **GitHub**: [github.com/ansdud923](https://github.com/ansdud923)  
-🌐 **Portfolio**: [your-portfolio-domain.com](https://nahyun-portfolio.netlify.app/)  
+🌐 **Portfolio**: [https://nahyun-portfolio.netlify.app/](https://nahyun-portfolio.netlify.app/)  
 📍 **Location**: 서울, 대한민국  
 
 ---
