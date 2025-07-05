@@ -136,7 +136,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   font-size: 16px;
   line-height: 1.6;
 }
@@ -252,7 +252,7 @@ select {
   padding: var(--space-5xl) 0;
   position: relative;
   min-height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   display: flex;
   align-items: center;
 }
@@ -279,7 +279,7 @@ select {
 
 .section.about {
   background: linear-gradient(135deg, #fcfbf8 0%, #e2e8f0 100%);
-  color: #aa3939;
+  color: #333;
 }
 
 .section.skills {
